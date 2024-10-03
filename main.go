@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 	"sort"
@@ -34,6 +35,10 @@ type PatreonInfo struct {
 
 func main() {
 	oauthToken := os.Getenv("PATREON_TOKEN")
+
+	if oauthToken == "" {
+		log.Fatalln("Empty token")
+	}
 
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", "https://www.patreon.com/api/oauth2/v2/campaigns/3498918/members?page%5Bsize%5D=1000&include=user&fields%5Bmember%5D=full_name,patron_status,pledge_relationship_start,pledge_cadence,currently_entitled_amount_cents", nil)
