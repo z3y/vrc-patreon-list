@@ -98,5 +98,5 @@ func main() {
 		fmt.Println(err)
 	}
 
-	os.WriteFile("patrons.json", bytes, 0644)
+	os.WriteFile("/output/patrons.json", bytes, 0644)
 }
