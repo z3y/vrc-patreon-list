@@ -98,5 +98,7 @@ func main() {
 		fmt.Println(err)
 	}
 
-	os.WriteFile("/output/patrons.json", bytes, 0644)
+	os.MkdirAll("./output", os.ModePerm)
+
+	os.WriteFile("./output/patrons.json", bytes, 0644)
 }
