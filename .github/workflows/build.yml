@@ -37,6 +37,8 @@ jobs:
           cache-dependency-path: |
             ./go.sum
       - run: go run ./main.go
+        env:
+          PATREON_TOKEN: ${{ secrets.PATREON_TOKEN }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
