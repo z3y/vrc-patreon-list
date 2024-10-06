@@ -6,8 +6,8 @@ name: Build Patreon List
 
 on:
   # Run every day
-  schedule:
-    - cron: "0 0 * * *"
+  #schedule:
+  #  - cron: "0 0 * * *"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
